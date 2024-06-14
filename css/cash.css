@@ -1565,16 +1565,7 @@ ul li:hover {
 .tabcontentCust button:hover {
   background-color: var(--whitered-alt-color);
 }
-.move-pos-sys {
-  position: absolute;
-  bottom: 10px;
-  
-  border-radius: 10px;
-    padding: 10px;
-    left: 50%;
-    background-color: #0075ff;
-  left: 45%;
-}
+
 .move-revcive-page {
   position: sticky;
   bottom: 10px;
@@ -1585,20 +1576,16 @@ ul li:hover {
     left: 50%;
     background-color: #0075ff;
 }
-.move-emp-page {
-  position: sticky;
-  border-radius: 10px;
-    padding: 10px;
-    left: 50%;
-    background-color: #0075ff;
-  bottom: 10px;
-  left: 50%;
-}
+
 .move-log-page {
   position: sticky;
-  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  left: 50%;
+  background-color: #0075ff;
   bottom: 10px;
   left: 50%;
+  color: white;
 }
 /* end New Customer */
 
