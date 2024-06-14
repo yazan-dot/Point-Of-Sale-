@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/frame.css" />
+    <link rel="stylesheet" href="../css/cash.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login Page</title>
+  </head>
+
+  <body class="h-vh bg-main-background flow-hidden">
+    <ul class="change-bg-login">
+      <li class="active" data-color="#eee"></li>
+      <li data-color="#333"></li>
+    </ul>
+    <div class="ball"></div>
+    <img class="dotes-one p-absolute" src="../images/dots.png" alt="" />
+    <img class="dotes-two p-absolute" src="../images/dots.png" alt="" />
+    <div class="page">
+      <div class="container">
+        <img
+          src="../images/Screenshot_2023-12-06_224726-removebg-preview.png"
+          alt=""
+        />
+        <h1 class="sign-in txt-center fs-25">Sign In</h1>
+        <form action="backend.php" method="post">
+          <div class="user p-relative">
+            <i class="fa-solid fa-user-tie fa-lg"></i>
+            <input
+              class="w-full bg-gray mt-5 bg-eee rad-6 pb-20 pt-20 pl-45 pr-45 b-none"
+              type="text"
+              name="username"
+              placeholder="UserName"
+              required
+              autofocus
+            />
+          </div>
+          <div class="pass p-relative">
+            <i class="fa-solid fa-lock fa-lg"></i>
+            <input
+              class="w-full bg-gray mt-10 bg-eee rad-6 pb-20 pt-20 pl-45 pr-45 b-none"
+              type="password"
+              name="pass"
+              placeholder="Password"
+              minlength="10"
+              maxlength="20"
+              required
+            />
+          </div>
+          <div class="SIGN">
+            <input
+              class="w-full cursor-pointer bg-blue c-white c-gray rad-6 pb-20 pt-20 pl-45 pr-45 b-none mt-10"
+              type="submit"
+              value="SIGN IN"
+            />
+          </div>
+          <!-- 
+        <div class="last d-flex  space-between fs-14 mt-5 c-gray mt-10">
+          <div class="remember ">
+                <input  type="checkbox" id="remember"> 
+                <label class=" p-relative cursor-pointer" for="remember">Remember Me</label>            
+          </div>
+          <span class="cursor-pointer"> Forget Password</span>
+        </div>
+          -->
+        </form>
+      </div>
+    </div>
+    <a class="move-pos-sys" href="/index.html">To cash page</a>
+    <script src="/html/JS/jsThree.js"></script>
+  </body>
+</html>

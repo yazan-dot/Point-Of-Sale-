@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Item</title>
+    <link rel="stylesheet" href="../css/frame.css" />
+    <link rel="stylesheet" href="../css/cash.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="new-item" class="new-item mt-25">
+      <div class="container-c">
+        <form action="backend.php" id="item-form" method="get">
+          <div class="Qty">
+            <label class="d-block fs-25 mb-10 f-weight" for="quantity">
+              Quantity
+            </label>
+            <input
+              type="number"
+              min="6"
+              max="120"
+              id="quantity"
+              name="qty"
+              required
+            />
+  
+            <p class="mt-5 c-gray fs-14">
+              Define the quantity, and sure about it
+            </p>
+          </div>
+          <div class="supplier-name">
+            <label class="d-block fs-25 mb-10 f-weight" for="suppliers">
+              Supplier
+            </label>
+            <input list="suppliers" name="suppname" required />
+            <datalist id="suppliers">
+              <option value="Dafaf Al-Nahrain Company"></option>
+              <option value="Al-Ameed Company"></option>
+              <option value="Al-Layan Company"></option>
+              <option value="Al-Hekma"></option>
+            </datalist>
+
+            <p class="mt-5 c-gray fs-14">
+              Select to which category the item is assigned
+            </p>
+          </div>
+          <div class="cost-price">
+            <label class="d-block fs-25 mb-10 f-weight" for="costpce">
+              Cost Price
+            </label>
+            <input type="text" id="costpce" name="costpce" required />
+            <p class="mt-5 c-gray fs-14">Define the cost price of product</p>
+          </div>
+          <div class="sale-price">
+            <label class="d-block fs-25 mb-10 f-weight" for="salepce">
+              Sale Price
+            </label>
+            <input type="text" id="salepce" name="salepce" required />
+            <p class="mt-5 c-gray fs-14">Define the cost price of sale-item</p>
+          </div>
+          <div class="item-name">
+            <label class="d-block fs-25 mb-10 f-weight" for="item-name ">
+              Product Name</label
+            >
+            
+            <input
+              type="text"
+              id="item-name "
+              name="item-name "
+              minlength="5"
+              required
+            />
+            <p class="mt-5 c-gray fs-14">Define the name of item</p>
+          </div>
+          <div class="item-number">
+            <label class="d-block fs-25 mb-10 f-weight" for="item-number">
+              Category of product</label
+            >
+            <input type="text" id="item-number" name="item-number" required />
+            <p class="mt-5 c-gray fs-14">Define the category of product</p>
+          </div>
+          <div class="expiry-date">
+            <label class="d-block fs-25 mb-10 f-weight" for="expiry-date">
+              Expiry-date
+            </label>
+            <input type="date" id="expiry-date" name="expiry-date" required />
+            <p class="mt-5 c-gray fs-14">Define the date of expiry date</p>
+          </div>
+          <div class="bare-Code">
+            <label class="d-block fs-25 mb-10 f-weight" for="bare-Code">
+              QR Code
+            </label>
+            <input
+              type="text"
+              id="bare-Code"
+              name="bare-Code"
+              required
+              autofocus
+              maxlength="13"
+            />
+            <p class="mt-5 c-gray fs-14">
+              Define the QR Code value, Focus the cursor here before scanning
+              the product
+            </p>
+          </div>
+          <div class="dismiss">
+            <input
+              class="cursor-pointer"
+              type="reset"
+              value="dismiss"
+              name="dismiss"
+            />
+          </div>
+          <div class="submit">
+            <input
+              class="cursor-pointer"
+              type="submit"
+              value="Save"
+              name="save"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/html/JS/jsFive.js"></script>
+  </body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receving Page</title>
+    <link rel="stylesheet" href="../css/frame.css" />
+    <link rel="stylesheet" href="../css/cash.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-main-background">
+    <!-- Start header of  -->
+    <div class="header">
+      <div class="container-c flex-between">
+        <button class="scroll-up">Up</button>
+        <div class="logo">
+          <img
+            src="../images/Screenshot_2023-12-06_224726-removebg-preview.png"
+            alt=""
+          />
+        </div>
+        <div class="name-notice d-flex align-center">
+          <div class="emp-name mr-10">
+            <i class="fa-regular fa-user fa-lg mr-5"></i>
+            <span>Reveiving Emp</span>
+          </div>
+          <!-- start pop up msg Out of stock  -->
+          <div class="bell-receiving p-relative">
+            <button id="popupButtonOos">
+              <i class="fa-regular fa-bell fa-lg"></i>
+            </button>
+            <div id="popupModalOos" class="modalOos">
+              <div class="modal-content-Oos">
+                <span class="icon-Oos"
+                  ><i class="fa-solid fa-circle-exclamation"></i
+                ></span>
+
+                <h2 class="fs-14">Out Of Stock:</h2>
+                <span class="closeOos" id="closePopupOos">&times;</span>
+                <div class="message-out-stock">
+                  <p class="mb-5">
+                    The name of the item is : <strong>Tiger Rice 4Kg</strong>
+                  </p>
+                  <p>The item number is : <strong>420</strong></p>
+                  <div class="time-out-stock">2 minutes ago</div>
+                </div>
+                <div class="message-out-stock">
+                  <p class="mb-5">
+                    The name of the item is : <strong>Tiger Rice 4Kg</strong>
+                  </p>
+                  <p>The item number is : <strong>420</strong></p>
+                  <div class="time-out-stock">2 minutes ago</div>
+                </div>
+                <div class="message-out-stock">
+                  <p class="mb-5">
+                    The name of the item is : <strong>Tiger Rice 4Kg</strong>
+                  </p>
+                  <p>The item number is : <strong>420</strong></p>
+                  <div class="time-out-stock">2 minutes ago</div>
+                </div>
+                <div class="message-out-stock">
+                  <p class="mb-5">
+                    The name of the item is : <strong>Tiger Rice 4Kg</strong>
+                  </p>
+                  <p>The item number is : <strong>420</strong></p>
+                  <div class="time-out-stock">2 minutes ago</div>
+                </div>
+                <div class="message-out-stock">
+                  <p class="mb-5">
+                    The name of the item is : <strong>Tiger Rice 4Kg</strong>
+                  </p>
+                  <p>The item number is : <strong>420</strong></p>
+                  <div class="time-out-stock">2 minutes ago</div>
+                </div>
+                <div class="message-out-stock">
+                  <p class="mb-5">
+                    The name of the item is : <strong>Tiger Rice 4Kg</strong>
+                  </p>
+                  <p>The item number is : <strong>420</strong></p>
+                  <div class="time-out-stock">2 minutes ago</div>
+                </div>
+
+                <div class="clear-msg-Oos">
+                  <span>Clear All Message</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end pop up msg Out of stock  -->
+
+          <!-- start multi bg -->
+          <ul class="change-bg">
+            <li class="active" data-color="#eee"></li>
+            <li data-color="#333"></li>
+          </ul>
+          <!-- end multi bg -->
+        </div>
+      </div>
+    </div>
+    <div class="products-nav mb-10 mt-15">
+      <div class="container-c flex-between fs-14">
+        <div class="product d-flex">
+          <div
+            class="new-item cursor-pointer bg-blue tr-3 c-white mr-5 rad-10 p-10"
+          >
+            <a class="c-white" href="addPro.html">
+              <i class="fa-solid fa-circle-plus fa-lg mr-5"></i>
+              <span> New Item</span>
+            </a>
+          </div>
+          <div class="edit cursor-not-allowed bg-white tr-3 rad-10 p-10 mr-5">
+            <i class="fa-regular fa-pen-to-square fa-lg"></i>
+            <span>Edit</span>
+          </div>
+          <div
+            class="delet-item reset-button cursor-not-allowed bg-whitered tr-3 c-white rad-10 p-10 mr-10"
+          >
+            <i class="fa-solid fa-trash-can-arrow-up fa-lg"></i>
+            <span>Delet Item</span>
+          </div>
+        </div>
+        <div class="monier d-flex flex-1">
+          <div
+            class="search-item b-input rad-10 bg-white d-flex align-center p-relative mr-5"
+          >
+            <div class="glass-icon pr-10 pl-10">
+              <i class="fa-solid fa-magnifying-glass c-gray tr-3"></i>
+            </div>
+            <input class="b-none pl-10" type="search" placeholder="search" />
+          </div>
+          <div class="print bg-white tr-3 rad-10 p-10 mr-5">
+            <a>
+              <i class="fa-solid fa-print fa-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- start table of product list   -->
+    <div class="table-product">
+      <div class="table-emp mb-25">
+        <div class="container-c">
+          <table class="w-full bg-white">
+            <thead>
+              <tr>
+                <td>Action</td>
+                <td>Item Number</td>
+                <td>Supplier</td>
+                <td>Cateegory</td>
+                <td>Product Name</td>
+                <td>Cost Price</td>
+                <td>Sale Price</td>
+                <td>Qty</td>
+                <td>QR Code</td>
+                <td>Expiry Date</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-1" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-1"
+                    ></label>
+                  </div>
+                </td>
+                <td>4</td>
+                <td>Dafaf Al-Nahrain Company</td>
+                <td>Beverage</td>
+                <td>Matrix-Cola 250 ML</td>
+                <td>0.22</td>
+                <td>0.3</td>
+                <td>125</td>
+                <td>6253500222008</td>
+                <td>01-03-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-2" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-2"
+                    ></label>
+                  </div>
+                </td>
+                <td>5</td>
+                <td>Dafaf Al-Nahrain Company</td>
+                <td>Beverage</td>
+                <td>Matrix-Lemon and Mint 250 ML</td>
+                <td>0.22</td>
+                <td>0.3</td>
+                <td>55</td>
+                <td>6253500224428</td>
+                <td>01-05-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-3" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-3"
+                    ></label>
+                  </div>
+                </td>
+                <td>6</td>
+                <td>Dafaf Al-Nahrain Company</td>
+                <td>Beverage</td>
+                <td>Matrix-Orange 250 ML</td>
+                <td>0.22</td>
+                <td>0.3</td>
+                <td>15</td>
+                <td>6255580224428</td>
+                <td>05-05-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-4" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-4"
+                    ></label>
+                  </div>
+                </td>
+                <td>144</td>
+                <td>Haddad Group</td>
+                <td>Snaks</td>
+                <td>MR-Chips Cheese 100g</td>
+                <td>0.77</td>
+                <td>1.10</td>
+                <td>86</td>
+                <td>6255558924428</td>
+                <td>06-11-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-5" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-5"
+                    ></label>
+                  </div>
+                </td>
+                <td>146</td>
+                <td>Haddad Group</td>
+                <td>Snaks</td>
+                <td>MR-Chips BBQ 100g</td>
+                <td>0.77</td>
+                <td>1.10</td>
+                <td>23</td>
+                <td>6255585524428</td>
+                <td>06-09-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-6" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-6"
+                    ></label>
+                  </div>
+                </td>
+                <td>148</td>
+                <td>Haddad Group</td>
+                <td>Snaks</td>
+                <td>MR-Chips salt and vinegar 62g</td>
+                <td>0.22</td>
+                <td>0.35</td>
+                <td>23</td>
+                <td>6255587855428</td>
+                <td>06-09-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-7" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-7"
+                    ></label>
+                  </div>
+                </td>
+                <td>85</td>
+                <td>Al-Ameed Company</td>
+                <td>Hot Drink</td>
+                <td>Al-Ameed Turkish Coffee Black 250g</td>
+                <td>3.05</td>
+                <td>3.55</td>
+                <td>20</td>
+                <td>6244500222668</td>
+                <td>05-13-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-8" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-8"
+                    ></label>
+                  </div>
+                </td>
+                <td>86</td>
+                <td>Al-Ameed Company</td>
+                <td>Hot Drink</td>
+                <td>Al-Ameed Turkish Coffee white 250g</td>
+                <td>3.00</td>
+                <td>3.55</td>
+                <td>16</td>
+                <td>6244500333668</td>
+                <td>01-11-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input class="appearance-none" type="checkbox" id="row-9" />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-9"
+                    ></label>
+                  </div>
+                </td>
+                <td>255</td>
+                <td>Al-Layan Company</td>
+                <td>House Clean</td>
+                <td>Multi-use household cleaner with oud scent 700ML</td>
+                <td>2.30</td>
+                <td>2.89</td>
+                <td>11</td>
+                <td>6253507722008</td>
+                <td>11-03-2026</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input
+                      class="appearance-none"
+                      type="checkbox"
+                      id="row-11"
+                    />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-11"
+                    ></label>
+                  </div>
+                </td>
+                <td>256</td>
+                <td>Al-Layan Company</td>
+                <td>House Clean</td>
+                <td>Multi-use household cleaner with Lemon scent 700ML</td>
+                <td>2.35</td>
+                <td>2.89</td>
+                <td>11</td>
+                <td>6253555722008</td>
+                <td>11-03-2026</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input
+                      class="appearance-none"
+                      type="checkbox"
+                      id="row-12"
+                    />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-12"
+                    ></label>
+                  </div>
+                </td>
+                <td>256</td>
+                <td>Al-Layan Company</td>
+                <td>House Clean</td>
+                <td>Multi-use household cleaner with Lemon scent 700ML</td>
+                <td>2.35</td>
+                <td>2.89</td>
+                <td>11</td>
+                <td>6253555722008</td>
+                <td>11-03-2026</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="remember">
+                    <input
+                      class="appearance-none"
+                      type="checkbox"
+                      id="row-13"
+                    />
+                    <label
+                      class="p-relative cursor-pointer"
+                      for="row-13"
+                    ></label>
+                  </div>
+                </td>
+                <td>256</td>
+                <td>Al-Layan Company</td>
+                <td>House Clean</td>
+                <td>Multi-use household cleaner with Lemon scent 700ML</td>
+                <td>2.33</td>
+                <td>2.89</td>
+                <td>11</td>
+                <td>6253555722008</td>
+                <td>11-03-2026</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- start Add new ITEM -->
+    <!-- <div id="new-item" class="new-item mt-25">
+      <div class="container-c">
+        <form action="backend.php" method="get">
+          <div class="Qty">
+            <label class="d-block fs-25 mb-10 f-weight" for="quantity">
+              Quantity
+            </label>
+            <input
+              type="number"
+              min="6"
+              max="120"
+              id="quantity"
+              name="qty"
+              required
+            />
+            <p class="mt-5 c-gray fs-14">
+              Define the quantity, and sure about it
+            </p>
+          </div>
+          <div class="supplier-name">
+            <label class="d-block fs-25 mb-10 f-weight" for="suppliers">
+              Supplier
+            </label>
+            <input list="suppliers" name="suppname" required />
+            <datalist id="suppliers">
+              <option value="Dafaf Al-Nahrain Company"></option>
+              <option value="Al-Ameed Company"></option>
+              <option value="Al-Layan Company"></option>
+              <option value="Al-Hekma"></option>
+            </datalist>
+
+            <p class="mt-5 c-gray fs-14">
+              Select to which category the item is assigned
+            </p>
+          </div>
+          <div class="cost-price">
+            <label class="d-block fs-25 mb-10 f-weight" for="costpce">
+              Cost Price
+            </label>
+            <input type="text" id="costpce" name="costpce" required />
+            <p class="mt-5 c-gray fs-14">Define the cost price of product</p>
+          </div>
+          <div class="sale-price">
+            <label class="d-block fs-25 mb-10 f-weight" for="salepce">
+              Sale Price
+            </label>
+            <input type="text" id="salepce" name="salepce" required />
+            <p class="mt-5 c-gray fs-14">Define the cost price of sale-item</p>
+          </div>
+          <div class="item-name">
+            <label class="d-block fs-25 mb-10 f-weight" for="item-name ">
+              Product Name</label
+            >
+            <input
+              type="text"
+              id="item-name "
+              name="item-name "
+              minlength="5"
+              required
+            />
+            <p class="mt-5 c-gray fs-14">Define the name of item</p>
+          </div>
+          <div class="item-number">
+            <label class="d-block fs-25 mb-10 f-weight" for="item-number">
+              Category of product</label
+            >
+            <input type="text" id="item-number" name="item-number" required />
+            <p class="mt-5 c-gray fs-14">Define the category of product</p>
+          </div>
+          <div class="expiry-date">
+            <label class="d-block fs-25 mb-10 f-weight" for="expiry-date">
+              Expiry-date
+            </label>
+            <input type="date" id="expiry-date" name="expiry-date" required />
+            <p class="mt-5 c-gray fs-14">Define the date of expiry date</p>
+          </div>
+          <div class="bare-Code">
+            <label class="d-block fs-25 mb-10 f-weight" for="bare-Code">
+              QR Code
+            </label>
+            <input
+              type="text"
+              id="bare-Code"
+              name="bare-Code"
+              required
+              autofocus
+              maxlength="13"
+            />
+            <p class="mt-5 c-gray fs-14">
+              Define the QR Code value, Focus the cursor here before scanning
+              the product
+            </p>
+          </div>
+          <div class="dismiss">
+            <input
+              class="cursor-pointer"
+              type="reset"
+              value="dismiss"
+              name="dismiss"
+            />
+          </div>
+          <div class="submit">
+            <input
+              class="cursor-pointer"
+              type="submit"
+              value="Save"
+              name="save"
+            />
+          </div>
+        </form>
+      </div>
+    </div> -->
+    <!-- end Add new ITEM -->
+    <!-- start Add new Suppliers -->
+    <div class="list-supps mb-25">
+      <div class="container-c">
+        <div class="headOfSupp mb-5 flex-between">
+          <div class="d-flex">
+            <div class="edit cursor-not-allowed bg-white tr-3 rad-10 p-10 mr-5">
+              <i class="fa-regular fa-pen-to-square fa-lg"></i>
+              <span>Edit</span>
+            </div>
+            <div
+              class="delet-item cursor-not-allowed bg-whitered tr-3 c-white rad-10 p-10 mr-10"
+            >
+              <i class="fa-solid fa-trash-can-arrow-up fa-lg"></i>
+              <span>Delete Item</span>
+            </div>
+          </div>
+          <div class="d-flex">
+            <a
+              class="add-supp cursor-pointer c-black bg-white tr-3 rad-10 p-10 mr-5"
+              href="#new-supp"
+            >
+              <i class="fa-solid fa-truck-field fa-lg"></i>
+              <span>New Supplier</span>
+            </a>
+            <div
+              class="search-item b-input rad-10 bg-white d-flex align-center p-relative mr-5"
+            >
+              <div class="glass-icon pr-10 pl-10">
+                <i class="fa-solid fa-magnifying-glass c-gray tr-3"></i>
+              </div>
+              <input class="b-none pl-10" type="search" placeholder="search" />
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="container-c">
+            <table class="bg-white" id="suppliers-table">
+              <thead class="bg-black">
+                <tr>
+                  <td>Action</td>
+                  <td>Supplier No</td>
+                  <td>Company Name</td>
+                  <td>Phone Number</td>
+                  <td>Email</td>
+                  <td class="txt-center">
+                    <i class="fa-solid fa-envelopes-bulk"></i>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- JavaScript will generate rows here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="new-supp" class="insert-newSupp vh-vh">
+      <div class="container-c d-flex">
+        <div class="image">
+          <img src="../images/7977921.png" alt="" />
+        </div>
+        <div class="input-ofSupp flex-1 ml-10">
+          <h2 class="mb-10">Create a new Supplier</h2>
+          <p class="mb-25 c-gray">Register a new Supplier and save it.</p>
+          <!-- Wrap the input fields within a form -->
+          <form id="supplier-form" onsubmit="addSupplier(event)">
+            <div class="alio mb-10 p-relative">
+              <label class="d-block mb-5 fit-width" for="company-name"
+                >Company Name :</label
+              >
+              <input
+                class="w-full p-10 pl-45 rad-6 bg-eee"
+                type="text"
+                id="company-name"
+                required
+              />
+              <i class="fa-regular fa-building"></i>
+            </div>
+            <div class="alio mb-10 p-relative">
+              <label class="d-block mb-5 fit-width" for="supplier-no"
+                >Supplier Number :</label
+              >
+              <input
+                class="w-full p-10 pl-45 rad-6 bg-eee"
+                type="text"
+                id="supplier-no"
+                required
+              />
+              <i class="fa-solid fa-hashtag"></i>
+            </div>
+            <div class="alio mb-10 p-relative">
+              <label class="d-block mb-5 fit-width" for="phone-no"
+                >Phone Number :</label
+              >
+              <input
+                class="w-full p-10 pl-45 rad-6 bg-eee"
+                type="text"
+                id="phone-no"
+                required
+              />
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="alio mb-10 p-relative">
+              <label class="d-block mb-5 fit-width" for="email">Email :</label>
+              <input
+                class="w-full p-10 pl-45 rad-6 bg-eee"
+                type="email"
+                id="email"
+                required
+              />
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="alio mb-10 p-relative">
+              <label class="d-block mb-5 fit-width" for="cat"
+                >Category (O) :</label
+              >
+              <input
+                class="w-full p-10 pl-45 rad-6 bg-eee"
+                type="text"
+                placeholder="like: Grocery, Frozen, etc...."
+                id="cat"
+              />
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div class="subAndDel flex-between">
+              <!-- Change the button type to "submit" -->
+              <button class="c-white bg-blue cursor-pointer" type="submit">
+                Add
+              </button>
+              <input
+                class="c-white bg-whitered cursor-pointer"
+                type="reset"
+                value="Reset"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <a href="/html/accounting.html" class="move-revcive-page">To add Emp </a>
+    <script src="/html/JS/jsTwo.js"></script>
+  </body>
+</html>

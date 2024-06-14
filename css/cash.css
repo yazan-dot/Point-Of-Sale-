@@ -1,0 +1,1725 @@
+/*//////////////////////////////////////login/////////////////////////////*/
+:root {
+  --blue-alt-color: #0d69d5;
+  --blue-color: #0075ff;
+  --gray-color: gray;
+  --whitered-color: #e56969;
+  --whitered-alt-color: #df3a3a;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+input:focus {
+  outline: none;
+  border: none;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.ball::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #eee;
+  top: -60px;
+  left: -65px;
+}
+.ball::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #eee;
+  bottom: -70px;
+  right: -45px;
+}
+.page::before {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px solid #0075ff47;
+  top: -120px;
+  left: -110px;
+}
+.page::after {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px solid #0075ff47;
+  bottom: -150px;
+  right: -100px;
+}
+.sign-in {
+  background-color: #eee;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 26px;
+  color: #333;
+  font-family: monospace;
+}
+@media (max-width: 768px) {
+  .page::before,
+  .page::after,
+  .ball::after,
+  .ball::before,
+  .dotes-one,
+  .dotes-two {
+    display: none;
+  }
+}
+.dotes-one {
+  width: 200px;
+  left: -60px;
+  bottom: -85px;
+}
+
+.dotes-two {
+  width: 200px;
+  right: -60px;
+  top: -95px;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px -10px #0e8ef3;
+  background-color: #afd5f336;
+}
+.container img {
+  width: 280px;
+  margin-bottom: 25px;
+}
+input {
+  caret-color: var(--gray-color);
+  border: none;
+}
+.page .container input::placeholder {
+  color: gray;
+  transition: 0.3s;
+}
+.page .container input:focus::placeholder {
+  opacity: 0;
+}
+.pass i,
+.user i {
+  position: absolute;
+  top: 35px;
+  transform: translateY(-50%);
+  left: 15px;
+  color: gray;
+}
+.page .container .remember input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.remember label::before {
+  content: "";
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--gray-color);
+  margin-top: -9px;
+  border-radius: 2px;
+}
+.remember label:hover::before {
+  border-color: #0075ff;
+}
+.remember label::after {
+  font-family: var(--fa-style-family-classic);
+  content: "\f00c";
+  position: absolute;
+  font-weight: 900;
+  color: white;
+  background-color: var(--blue-color);
+  margin-top: -9px;
+  border-radius: 2px;
+  right: -25px;
+  top: 10px;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0) rotate(360deg);
+  transition: 0.3s;
+}
+.remember input[type="checkbox"]:checked + label::after {
+  transform: scale(1);
+}
+
+/*//////////////////////////////////////login/////////////////////////////*/
+/*/////////////////////////////////////index //////////////////////////////*/
+
+/* html {
+  scroll-behavior: smooth;
+} */
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container-c {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container-c {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container-c {
+    width: 1170px;
+  }
+}
+/* start header */
+.header .container-c img {
+  width: 250px;
+}
+.header .container-c .bell,
+.header .container-c .bell-receiving {
+  margin-right: 10px;
+}
+.header .container-c .bell::after,
+.header .container-c .bell-receiving::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--whitered-alt-color);
+  top: 0px;
+  right: -1px;
+}
+.header .container-c .bell:hover i,
+.header .container-c .bell-receiving:hover i {
+  color: var(--blue-color);
+  transition: 0.3s;
+}
+
+/* end header */
+/*start navigation of cash */
+@media (max-width: 768px) {
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .header .container-c .bell,
+  .header .name-notice .emp-name span {
+    display: none;
+  }
+  .header .container-c img {
+    width: 150px;
+  }
+  .navigation .yazan span,
+  .navigation .time {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .navigation .container-c {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+.navigation .archive:hover,
+.products-nav .container-c .product .new-item:hover {
+  background-color: var(--blue-alt-color);
+}
+.navigation .reset:hover,
+.products-nav .container-c .product .delet-item:hover {
+  background-color: var(--whitered-alt-color);
+}
+.print-index:hover,
+.navigation .hold:hover,
+.products-nav .container-c .product .edit:hover,
+.products-nav .container-c .monier .print:hover {
+  color: #0075ff;
+  background-color: whitesmoke;
+}
+.navigation .glass-icon::before,
+.products-nav .container-c .monier .search-item .glass-icon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #9e9e9e;
+  left: 4%;
+  top: 0;
+}
+@media (max-width: 768px) {
+  .navigation .glass-icon::before {
+    left: 17%;
+  }
+}
+
+.navigation .container-c .search input,
+.products-nav .container-c .monier .search-item input {
+  background-color: transparent;
+  width: 100%;
+  height: 36px;
+}
+.navigation .container-c .yazan .search:focus-within i,
+.products-nav .container-c .monier .search-item:focus-within i {
+  color: black;
+}
+/*end navigation of cash */
+/*start table */
+/**************end items of table *************/
+.table-emp .container-c {
+  overflow-x: auto;
+}
+.table-emp .container-c table {
+  min-width: 1000px;
+  border-spacing: 0;
+  font-size: 15px;
+}
+
+.table-emp .container-c table thead td {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+.table-emp .container-c table td {
+  padding: 15px;
+}
+.table-emp .container-c table tbody td {
+  border-bottom: 2px solid #eee;
+  border-left: 3px solid #eee;
+  transition: 0.3s;
+}
+.table-cash-one .table-emp .container-c table tbody td:last-child {
+  border-right: 2px solid #eee;
+  cursor: pointer;
+}
+.table-emp .container-c table tbody tr:not(:last-child) td:last-child:hover i {
+  color: var(--whitered-alt-color);
+  transition: 0.6s;
+}
+.table-emp .container-c table tbody tr:not(:last-child):hover td {
+  background-color: #e1e5e7;
+}
+.monier .search-item {
+  width: 100%;
+}
+.table-emp .container-c table tbody .pay-table:hover {
+  background-color: var(--blue-alt-color);
+  color: white;
+}
+.table-emp .container-c table tbody .hold-table:hover {
+  background-color: var(--whitered-alt-color);
+  color: white;
+}
+.table-emp .container-c table tbody .return-table a {
+  color: black;
+  transition: 0.3s;
+}
+.table-emp .container-c table tbody .return-table:hover {
+  background-color: whitesmoke;
+}
+.table-emp .container-c table tbody .return-table:hover a {
+  color: #0075ff;
+}
+.table-emp .container-c table tbody .open-table:hover {
+  color: #0075ff;
+  background-color: whitesmoke;
+}
+/**************end items of table *************/
+/**************start calculation of table *************/
+/* .head-calc .container-c {
+  padding-top: 45px;
+  padding-bottom: 30px;
+}
+.head-calc .container-c h1 {
+  font-size: 40px;
+  font-weight: normal;
+  position: relative;
+  width: fit-content;
+}
+.head-calc .container-c h1::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  background-color: black;
+  width: 75%;
+  height: 2px;
+}
+.head-calc .container-c h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  background-color: white;
+  width: 25%;
+  height: 2px;
+}
+.calc .container-c {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .calc .container-c {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr);
+    gap: 10px;
+  }
+}
+.calc .container-c div {
+  padding: 20px 0px 20px 20px;
+}
+.calc .container-c input {
+  width: 100px;
+}
+.calc .container-c input::placeholder {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+.calc .container-c .change {
+  grid-column-start: 1;
+  grid-column-end: 3;
+} */
+.popup-calaculaion {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 515px;
+}
+
+.popup-content h1 {
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-container span {
+  display: inline-block;
+  width: 100px;
+  font-size: 18px;
+}
+
+.input-container input[type="text"] {
+  width: calc(100% - 100px);
+  padding: 5px;
+  margin-top: 7px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 45px;
+}
+
+.calculation-section {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 5px;
+}
+
+.calculation-section div {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.red-button-ca,
+.blue-button-ca {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.blue-button-ca {
+  background-color: var(--blue-color);
+}
+.red-button-ca {
+  background-color: var(--whitered-color);
+}
+.blue-button-ca:hover {
+  background-color: var(--blue-alt-color);
+}
+.red-button-ca:hover {
+  background-color: var(--whitered-alt-color);
+}
+.abcd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/**************end calculation of table ***********/
+/************* start complet payment***************/
+/* 
+@media (max-width: 768px) {
+  .keyboard .container-c {
+    padding-right: 0;
+  }
+  .keyboard .butto-one {
+    font-size: 20px;
+  }
+  .keyboard .butto-two {
+    font-size: 20px;
+  }
+}
+.keyboard {
+  padding-bottom: 65px;
+}
+.keyboard .container-c .key {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px 5px;
+  flex-basis: 70%;
+}
+.keyboard .container-c .key div {
+  height: 50px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.keyboard .container-c .key div:hover {
+  background-color: #ddd;
+  transition: 0.3s;
+}
+.keyboard .container-c .comp-payment .butto-one:hover {
+  background-color: var(--blue-alt-color);
+  transition: 0.3s;
+}
+.keyboard .container-c .comp-payment .butto-two:hover {
+  background-color: var(--whitered-alt-color);
+  transition: 0.3s;
+} */
+/************* end complet payment***************/
+/**********************************************start pop of archive and hold *******************************************/
+
+.main-pop .container-c {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .main-pop .container-c {
+    grid-template-columns: minmax(330px, 1fr);
+    gap: 10px;
+  }
+  .main-pop h1 {
+    font-size: 25px;
+  }
+}
+
+.main-pop .pop-archive {
+  overflow: auto;
+  max-height: 555px;
+  z-index: 5;
+}
+.main-pop .container-c .box {
+  border-bottom: 1px #ddd solid;
+  padding: 5px 5px 20px;
+}
+.main-pop .container-c .box::before {
+  content: "";
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #ededed;
+  border-radius: 6px;
+  z-index: -1;
+  transition: 0.6s;
+}
+.main-pop .container-c .box:hover::before {
+  width: 100%;
+}
+.main-pop .container-c .pop-archive .box::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--blue-color);
+  bottom: 0;
+  left: 0;
+  transition: 0.6s;
+}
+.main-pop .pop-hold {
+  overflow: auto;
+  z-index: 5;
+
+  max-height: 555px;
+}
+.main-pop .pop-hold .head {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.main-pop .container-c .pop-hold .box::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--whitered-color);
+  bottom: 0;
+  left: 0;
+  transition: 0.6s;
+}
+.main-pop .container-c .box:hover::after {
+  width: 100%;
+}
+.main-pop .container-c .content-order {
+  font-size: 14px;
+  color: var(--gray-color);
+}
+.main-pop .container-c .pop-archive .head {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.main-pop .container-c .pop-hold .head::before {
+  position: absolute;
+  content: "";
+  border: var(--whitered-alt-color) 3px solid;
+  width: 101%;
+  border-radius: 6px;
+  height: 105%;
+  left: -6px;
+  top: -5px;
+}
+.main-pop .container-c .pop-archive .head::before {
+  position: absolute;
+  content: "";
+  border: var(--blue-color) 3px solid;
+  width: 102%;
+  border-radius: 6px;
+  height: 105%;
+  left: -7px;
+  top: -5px;
+}
+.main-pop .container-c .pop-archive a {
+  position: absolute;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  color: white;
+  background-color: var(--blue-color);
+  border-radius: 6px;
+  font-size: 10px;
+  right: 0;
+  font-weight: bold;
+  bottom: -5px;
+  cursor: zoom-in;
+}
+.main-pop .container-c .pop-hold a {
+  position: absolute;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  color: white;
+  background-color: var(--whitered-color);
+  border-radius: 6px;
+  font-size: 10px;
+  right: 0;
+  font-weight: bold;
+  bottom: -5px;
+  cursor: zoom-in;
+}
+/**********************************************end pop of archive and hold *******************************************/
+.table-product .table-emp .container-c table tbody td:last-child {
+  border-right: 2px solid #eee;
+}
+.table-product .table-emp tbody {
+  font-size: 13px;
+}
+.table-product .table-emp .container-c table td {
+  padding: 10px 5px;
+}
+.table-product .table-emp .container-c table {
+  min-width: 1260px;
+  border-spacing: 0;
+  font-size: 15px;
+}
+/**********************************************end PRODUCT LIST *******************************************/
+/**********************************************START ADD product *******************************************/
+@media (max-width: 768px) {
+  .products-nav .product span,
+  .products-nav .monier .print {
+    display: none;
+  }
+}
+.new-item .container-c form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px 15px;
+}
+@media (max-width: 768px) {
+  .new-item .container-c form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px 15px;
+  }
+}
+select:focus {
+  border: none;
+  outline: none;
+}
+.new-item input,
+.new-item select {
+  padding: 10px;
+  border: 12px solid #2196f3;
+  border-radius: 23px;
+  width: 100%;
+  transition: 0.3s;
+}
+.new-item input:focus,
+select:focus {
+  border-color: var(--blue-alt-color);
+}
+@media (min-width: 992px) {
+  .new-item .bare-Code,
+  .new-item .submit {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+}
+
+.new-item .submit input {
+  background-color: #2196f3;
+  color: white;
+  padding: 20px;
+  border: none;
+  font-size: 25px;
+}
+.new-item .dismiss input {
+  color: white;
+  background-color: var(--whitered-color);
+  border: none;
+  padding: 20px;
+  font-size: 25px;
+}
+.new-item .dismiss input:focus {
+  background-color: var(--whitered-alt-color);
+  transition: 0.3s;
+}
+.new-item .submit input:focus {
+  background-color: var(--blue-alt-color);
+  transition: 0.3s;
+}
+/**********************************************end ADD product *******************************************/
+/******************************************** LIST OF SUPPLIERS**********************************/
+.list-supps {
+  padding-top: 150px;
+}
+.list-supps .container-c .search-item .glass-icon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #9e9e9e;
+  left: 17%;
+  top: 0;
+}
+.list-supps .container-c .search-item input {
+  background-color: transparent;
+  width: 100%;
+  height: 36px;
+}
+.list-supps .container-c .search-item:focus-within i {
+  color: black;
+}
+@media (max-width: 768px) {
+  .list-supps .headOfSupp div span {
+    display: none;
+  }
+}
+.list-supps .content .container-c {
+  overflow-x: auto;
+  height: 500px;
+}
+.list-supps .container-c table {
+  border-spacing: 0;
+  font-size: 15px;
+  min-width: 100%;
+}
+.list-supps .container-c table thead td {
+  color: white;
+  font-weight: bold;
+}
+.list-supps .container-c table td {
+  padding: 10px;
+  transition: 0.3s;
+}
+.list-supps .container-c table tbody td {
+  border-bottom: 2px solid #eee;
+  border-left: 3px solid #eee;
+}
+.list-supps .container-c table tbody td:last-child {
+  border-right: 2px solid #eee;
+}
+.list-supps .container-c table tbody tr:hover td {
+  background-color: #e1e5e7;
+}
+/******************************************END LIST OF Suppliers******************************************************/
+/******************************************start Add new Suppliers******************************************************/
+
+.insert-newSupp .container-c {
+  padding-top: 100px;
+}
+.insert-newSupp .image {
+  border-radius: 10px;
+  box-shadow: 0 0px 10px #a28383;
+  padding: 35px;
+  background-color: white;
+}
+@media (max-width: 768px) {
+  .insert-newSupp .image {
+    display: none;
+  }
+}
+.insert-newSupp img {
+  width: 350px;
+  height: 100%;
+  opacity: 0.6;
+}
+.insert-newSupp i {
+  position: absolute;
+  left: 10px;
+  top: 55%;
+  opacity: 0.3;
+  transition: 0.3s;
+}
+.insert-newSupp i::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  background-color: black;
+  height: 25px;
+  left: 25px;
+  top: -5px;
+}
+.insert-newSupp .alio:focus-within i {
+  opacity: 1;
+}
+.insert-newSupp .subAndDel input {
+  padding: 10px;
+  border-radius: 6px;
+  width: 35%;
+}
+.input-ofSupp {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+/******************************************END Add new Suppliers******************************************************/
+/********************************************START DATA OF EMPLOYEES****************************************************/
+.list-Ofemp .container-c div h1 div,
+.list-Ofemp .container-c div h1 div span {
+  height: 3px;
+}
+.list-Ofemp img {
+  width: 100%;
+  border-radius: 50%;
+}
+.list-Ofemp .dataEmp .image {
+  width: 300px;
+  position: relative;
+}
+.list-Ofemp .dataEmp .image .image-cont {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  width: 150px;
+}
+.list-Ofemp .dataEmp .image .image-cont .stars {
+  color: orange;
+}
+.list-Ofemp .dataEmp .INFO .box .yazan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.list-Ofemp .dataEmp .INFO .box .yazan div {
+  margin-right: 40px;
+}
+.list-Ofemp .dataEmp .INFO .box:not(:last-child) .yazan {
+  border-bottom: 1px solid #ddd;
+}
+.toggle-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+.toggle-switch {
+  top: -10px;
+  position: relative;
+  background-color: #ccc;
+  width: 78px;
+  height: 25px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: none;
+}
+.toggle-switch::before {
+  font-family: var(--fa-style-family-classic);
+  content: "\f00d";
+  font-weight: 900;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 3px;
+  top: 3px;
+  color: #ccc;
+  transition: 0.4s;
+  display: none;
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background-color: #0075ff;
+}
+.toggle-checkbox:checked + .toggle-switch::before {
+  content: "\f00c";
+  left: 50px;
+  color: #0075ff;
+}
+.list-Ofemp .yazan div {
+  width: 22%;
+}
+/********************************************END DATA OF EMPLOYEES****************************************************/
+/********************************************start scroll up buttom ****************************************************/
+.scroll-up {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  background-color: #0075ff;
+  z-index: 7;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: 0.3s;
+  display: none;
+  cursor: pointer;
+}
+.scroll-up:hover {
+  background-color: #0d69d5;
+}
+/********************************************end scroll up buttom ****************************************************/
+/********************************************start change-bg****************************************************/
+.mult-bg {
+  position: absolute;
+  left: 90%;
+  top: 10px;
+}
+.change-bg {
+  background-color: white;
+  padding: 5px 10px;
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+.change-bg li {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.change-bg li.active,
+ul li:hover {
+  opacity: 1;
+}
+
+.change-bg li:first-child {
+  background-color: #eee;
+}
+.change-bg li:nth-child(2) {
+  background-color: #333;
+}
+.change-bg li:nth-child(3) {
+  background-color: green;
+}
+/********************************************end change-bg****************************************************/
+/***************************************start pop up reset cash page *****************************************/
+.popup-overlay {
+  position: fixed;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.popup-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 25px;
+  z-index: 1001;
+  width: 400px;
+  border-radius: 6px;
+}
+
+.popup-box i {
+  color: #e56969;
+  font-size: 60px;
+  margin: 10px 43%;
+}
+.head-confirm {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+.para-confirm {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.div-pop-parent {
+  text-align: center;
+}
+.cancle-button {
+  border: none;
+  background-color: #e56969;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cancle-button:hover {
+  background-color: #df3a3a;
+}
+.confirm-button {
+  border: none;
+  background-color: #0075ff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: 0.3s;
+}
+.confirm-button:hover {
+  background-color: #0d69d5;
+}
+/***************************************end pop up reset cash page *****************************************/
+/********************************************************************************/
+/********************************************************************************/
+/********************************************************************************/
+/********************************************************************************/
+/********************************************************************************/
+/********************************************************************************/
+
+/**************************************start change bg ******************************************/
+
+.change-bg-login {
+  background-color: white;
+  padding: 5px 10px;
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  position: absolute;
+  right: 150px;
+  top: 8px;
+}
+.change-bg-login li {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.change-bg-login li.active,
+ul li:hover {
+  opacity: 1;
+}
+/*  */
+.change-bg-login li:first-child {
+  background-color: #eee;
+}
+.change-bg-login li:nth-child(2) {
+  background-color: #333;
+}
+/**************************************start change bg ******************************************/
+/**************************************start pop up for archive and hold in js  ******************************************/
+.popupAarchiveOrder {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.pop-archive {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.button-container-archive {
+  text-align: center;
+  margin-top: 20px;
+}
+.popupHoldOrder {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.pop-hold {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.button-container-hold {
+  text-align: center;
+  margin-top: 20px;
+}
+.search-hold-order,
+.search-archive-order {
+  border: 1px solid gray;
+  width: 100%;
+  height: 30px;
+  border-radius: 6px;
+  padding: 5px;
+}
+.search-hold-order:focus-visible,
+.search-archive-order:focus-visible {
+  border: 1px solid gray;
+}
+.bell-cash {
+  display: none;
+}
+.close-archive-pop,
+.close-hold-pop {
+  position: absolute;
+  right: 49%;
+  border-radius: 50%;
+  border: none;
+  top: 25px;
+  z-index: 10;
+  cursor: pointer;
+}
+.close-archive-pop i,
+.close-hold-pop i {
+  font-size: 28px;
+}
+/**************************************end pop up for archive and hold in js  ******************************************/
+/**************************************start add new user ******************************************/
+#addUserButton {
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.3s;
+}
+#addUserButton:hover {
+  background-color: whitesmoke;
+}
+
+/* Styles for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+
+  position: absolute;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 40%;
+}
+.modal-content input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 45px;
+}
+.modal-content h1 {
+  margin: 0px 0px 20px;
+}
+
+/* Styles for the close button */
+#closePopupButton {
+  background-color: var(--whitered-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#closePopupButton:hover {
+  background-color: var(--whitered-alt-color);
+}
+#saveUserButton {
+  background-color: var(--blue-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#saveUserButton:hover {
+  background-color: var(--blue-alt-color);
+}
+@media (max-width: 768px) {
+  #addUserButton span {
+    display: none;
+  }
+  .modal-content {
+    width: 75%;
+  }
+  .popup-content {
+    width: 92%;
+  }
+}
+/**************************************start add new user  ******************************************/
+/**************************************start msg  out of stock  ******************************************/
+#popupButtonOos {
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.icon-Oos {
+  position: relative;
+  left: 50%;
+  margin-bottom: 30px;
+  transform: translate(-50%, -20%);
+  display: inline-block;
+  margin: 0;
+  display: none;
+}
+#popupModalOos i {
+  font-size: 60px;
+  color: var(--whitered-alt-color);
+}
+.time-out-stock {
+  bottom: 12px;
+  position: absolute;
+  right: 0px;
+  color: white;
+  font-size: 11px;
+}
+/* Styles for the modal */
+.modalOos {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-content-Oos {
+  min-width: 26%;
+  position: absolute;
+  padding: 20px;
+  left: 82.5%;
+  top: 38%;
+  transform: translate(-50%, -50%);
+  background-color: #ddd;
+  border-radius: 10px;
+  max-height: 350px;
+  overflow: auto;
+}
+
+.closeOos {
+  color: #aaa;
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+  cursor: pointer;
+  right: 10px;
+  font-size: 30px;
+  transition: 0.3s;
+}
+.message-out-stock {
+  font-size: 12px;
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  line-height: 1.6;
+  border-bottom: 1px solid #33333394;
+}
+.clear-msg-Oos span {
+  display: inline-block;
+  color: white;
+  background-color: #df3a3a;
+  font-size: 11px;
+  padding: 4px;
+  border-radius: 7px;
+  position: relative;
+  left: 50%;
+  cursor: pointer;
+  margin-top: 15px;
+  transform: translate(-50%, 0%);
+}
+.closeOos:hover,
+.closeOos:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .modal-content-Oos {
+    width: 60%;
+  }
+}
+
+.subAndDel button {
+  padding: 10px;
+  border-radius: 6px;
+  width: 35%;
+  border: none;
+}
+.list-Ofemp input {
+  border-radius: 5px;
+  border: 1px solid #eee;
+  padding: 6px;
+}
+.list-Ofemp input:focus {
+  border: #333 solid 1px;
+}
+.save-re-Log {
+  position: absolute;
+  left: 7%;
+  bottom: 25px;
+}
+.save-re-Log input:first-child {
+  background-color: var(--whitered-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  margin-right: 5px;
+}
+.save-re-Log input:nth-child(2) {
+  background-color: var(--blue-color);
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 15px 20px;
+}
+.save-re-Log input:nth-child(2):hover {
+  background-color: var(--blue-alt-color);
+}
+.save-re-Log input:first-child:hover {
+  background-color: var(--whitered-alt-color);
+}
+/**************************************end msg  out of stock  ******************************************/
+/* start  New Customer */
+.popupCust {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content-customer {
+  border-radius: 10px;
+  position: absolute;
+  background-color: #fefefe;
+  padding: 20px;
+  width: fit-content;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 400px;
+  overflow: auto;
+}
+
+.tabCust {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tabCust button {
+  flex-basis: 50%;
+  font-size: 17px;
+  height: 50px;
+}
+
+.tabCust button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0px 16px;
+  transition: 0.3s;
+}
+.tabCust button:hover {
+  background-color: #ddd;
+}
+
+.tabCust button.active {
+  background-color: #ccc;
+}
+
+.tabcontentCust {
+  display: none;
+}
+
+.popupCust .close {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  z-index: 1;
+  font-size: 20px;
+  background-color: white;
+  color: gray;
+  border-radius: 50%;
+  padding: 0px 6px;
+}
+
+.popupCust .close:hover,
+.popupCust .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popupCust th {
+  color: white;
+  background-color: #333;
+  padding: 10px;
+  border-right: 2px solid #fff;
+}
+.popupCust table {
+  border-spacing: 0px;
+}
+.popupCust td {
+  padding: 10px;
+  border: 2px solid #fff;
+  background-color: #eee;
+}
+.popupCust input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+.popupCust input[type="submit"] {
+  background-color: var(--blue-color);
+  color: white;
+  transition: 0.3s;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.popupCust input[type="submit"]:hover {
+  background-color: var(--blue-alt-color);
+}
+.popupButtonCust {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.popupButtonCust:hover {
+  background-color: whitesmoke;
+}
+.tabcontentCust button {
+  border: none;
+  background-color: var(--whitered-color);
+  border-radius: 5px;
+  font-size: 12px;
+  color: white;
+  padding: 3px 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tabcontentCust button:hover {
+  background-color: var(--whitered-alt-color);
+}
+.move-pos-sys {
+  position: absolute;
+  bottom: 10px;
+  color: black;
+  left: 45%;
+}
+.move-revcive-page {
+  position: sticky;
+  bottom: 10px;
+  color: black;
+}
+.move-emp-page {
+  position: sticky;
+  color: black;
+  bottom: 10px;
+  left: 50%;
+}
+/* end New Customer */
+
+/* start pop 
+
+/* 
+/*
+.table-emp .container-c {
+  overflow-x: auto;
+ }
+ .table-emp .container-c table {
+  min-width: 1000px;
+  border-spacing: 0;
+  font-size: 15px;
+ }
+
+ .table-emp .container-c table thead td {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+ }
+ .table-emp .container-c table  td {
+  padding: 15px;
+ }
+ .table-emp .container-c table tbody  td {
+  border-bottom:2px solid #eee;
+  border-left:3px solid #eee;
+  transition: 0.3s;
+ }
+ .table-cash-one  .table-emp .container-c table tbody  td:last-child {
+  border-right:2px solid #eee;
+  cursor: pointer;
+ }
+.table-emp .container-c table tbody tr:not(:last-child) td:last-child:hover i {
+  color: var(--whitered-alt-color);
+  transition: 0.6s;
+ }
+ .table-emp .container-c table tbody tr:not(:last-child):hover td {
+  background-color: #e1e5e7;
+ }
+
+ .table-emp .container-c table tbody .pay-table:hover {
+  background-color: var(--blue-alt-color);
+  color: white;
+ }
+ .table-emp .container-c table tbody .hold-table:hover {
+  background-color: var(--whitered-alt-color);
+  color: white;
+ }
+ .table-emp .container-c table tbody .return-table a {
+  color: black;
+  transition: 0.3s;
+ }
+ .table-emp .container-c table tbody .return-table:hover  {
+  background-color: whitesmoke;
+ }
+ .table-emp .container-c table tbody .return-table:hover a {
+  color: #0075ff;
+ }
+ .table-emp .container-c table tbody .open-table:hover {
+  color: #0075ff;
+  background-color: whitesmoke;
+
+ }
+.keypad {
+  
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.key {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.key:hover {
+  background-color: #ddd;
+}
+
+Avvounting 
+/*
+.cash .container-c  {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.cash .box {
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: #33333340;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding:15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.cash .box:last-child {
+  grid-column-start: 1;
+    grid-column-end: 3;
+}
+.last .calc {
+  display: grid;
+  grid-template-columns: 120px 120px 120px;
+  margin-top: 26px;
+  font-weight: 600;
+  margin-left: 350px;
+}
+.last .calc div {
+  background-color: white;
+  margin: 10px;
+  padding: 11px 15px;
+  font-size: 26px;
+  border-radius: 89px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.last .barh {
+  position: absolute;
+    left: 50%;
+    width: 500px;
+    background-color: #19c8fa;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 30px;
+    transform: translatex(-50%);
+}
+ */

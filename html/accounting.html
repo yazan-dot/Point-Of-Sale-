@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empmloyee page</title>
+    <link rel="stylesheet" href="../css/frame.css" />
+    <link rel="stylesheet" href="../css/cash.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-main-background">
+    <!-- Start header of  -->
+    <div class="header">
+      <div class="container-c flex-between">
+        <div class="logo">
+          <img
+            src="../images/Screenshot_2023-12-06_224726-removebg-preview.png"
+            alt=""
+          />
+        </div>
+        <div class="name-notice d-flex align-center">
+          <div class="emp-name mr-10">
+            <i class="fa-regular fa-user fa-lg mr-5"></i>
+            <span>Manager </span>
+          </div>
+          <div class="bell p-relative d-none">
+            <i class="fa-regular fa-bell fa-lg"></i>
+          </div>
+          <ul class="change-bg">
+            <li class="active" data-color="#eee"></li>
+            <li data-color="#333"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Start header of  -->
+    <div class="list-Ofemp">
+      <div class="container-c">
+        <div>
+          <h1 class="fit-width">
+            Add New Employee
+            <div class="bg-white mt-5">
+              <span class="bg-black d-block" style="width: 75%"> </span>
+            </div>
+          </h1>
+        </div>
+        <div class="dataEmp d-flex bg-white rad-10 p-relative">
+          <div class="image">
+            <div class="image-cont">
+              <img
+                src="../images/254248292_4488945131218539_3594380631839996416_n.jpg"
+                alt=""
+              />
+              <h3 class="name mt-5 mb-5">Adel Shakal</h3>
+              <p class="c-gray">Level 16</p>
+              <div class="stars mt-10 mb-5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p class="c-gray">155 Rating</p>
+            </div>
+          </div>
+          <div class="INFO flex-1">
+            <form action="">
+              <div class="box pt-20">
+                <h4 class="mb-10 c-gray">General Information</h4>
+                <div class="yazan">
+                  <div>
+                    <span class="c-gray">Full Name:</span>
+                    <input
+                      type="text"
+                      id="fullName"
+                      placeholder="Adel Shakal"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span class="c-gray">Gender:</span>
+                    <input
+                      type="text"
+                      id="gender"
+                      placeholder="Male"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span class="c-gray">Country:</span>
+                    <input
+                      type="text"
+                      id="country"
+                      placeholder="Egypt "
+                      required
+                    />
+                  </div>
+                  <label>
+                    <input class="toggle-checkbox" type="checkbox" checked />
+                    <div class="toggle-switch"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="box pt-20">
+                <h4 class="mb-10 c-gray">Personal Information</h4>
+                <div class="yazan">
+                  <div>
+                    <span class="c-gray">Email:</span>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="adel-shakal425@nn.sa"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span class="c-gray">Phone:</span>
+                    <input
+                      type="tel"
+                      id="phone"
+                      required
+                      placeholder="079999999944444"
+                    />
+                  </div>
+                  <div>
+                    <span class="c-gray">Date Of Birth:</span>
+                    <input
+                      type="date"
+                      id="dob"
+                      placeholder="1975-11-02"
+                      required
+                    />
+                  </div>
+                  <label>
+                    <input class="toggle-checkbox" type="checkbox" checked />
+                    <div class="toggle-switch"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="box pt-20">
+                <h4 class="mb-10 c-gray">Job and Login Information</h4>
+                <div class="yazan">
+                  <div>
+                    <span class="c-gray">Title:</span>
+                    <input
+                      type="text"
+                      id="title"
+                      placeholder="Junior Casher"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span class="c-gray">User name:</span>
+                    <input
+                      type="text"
+                      id="userNameLog"
+                      placeholder="01CachEmp"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span class="c-gray">Password:</span>
+                    <input
+                      type="password"
+                      maxlength="20"
+                      minlength="10"
+                      id="passLog"
+                      placeholder="**************"
+                      required
+                    />
+                  </div>
+                  <label>
+                    <input class="toggle-checkbox" type="checkbox" checked />
+                    <div class="toggle-switch"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="box pt-20">
+                <h4 class="mb-10 c-gray">Billing Information</h4>
+                <div class="yazan">
+                  <div>
+                    <span class="c-gray">Payment Method:</span>
+                    <input
+                      type="text"
+                      id="paymentMethod"
+                      placeholder="Etihad bank"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <span class="c-gray">Subscription:</span>
+                    <input
+                      type="text"
+                      id="subscription"
+                      placeholder="Monthly"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span class="c-gray">Salary:</span>
+                    <input
+                      type="text"
+                      id="salary"
+                      placeholder="420 JD"
+                      required
+                    />
+                  </div>
+                  <label>
+                    <input class="toggle-checkbox" type="checkbox" checked />
+                    <div class="toggle-switch"></div>
+                  </label>
+                </div>
+              </div>
+              .
+              <div class="save-re-Log">
+                <input type="reset" value="Reset" />
+                <input type="submit" value="Save" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/html/JS/jsfour.js"></script>
+  </body>
+</html>

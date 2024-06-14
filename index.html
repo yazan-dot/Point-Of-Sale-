@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS SYS</title>
+    <link rel="stylesheet" href="../css/frame.css" />
+    <link rel="stylesheet" href="../css/cash.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-main-background">
+    <!-- Start header -->
+
+    <div class="header">
+      <div class="container-c flex-between">
+        <button class="scroll-up">Up</button>
+        <div class="logo">
+          <img
+            src="../images/Screenshot_2023-12-06_224726-removebg-preview.png"
+            alt=""
+          />
+        </div>
+        <div class="name-notice d-flex align-center">
+          <div class="emp-name mr-10">
+            <i class="fa-regular fa-user fa-lg mr-5"></i>
+            <span>Store Cashier</span>
+          </div>
+          <div class="bell-cash p-relative">
+            <i class="fa-regular fa-bell fa-lg"></i>
+          </div>
+          <!-- start multi bg -->
+          <ul class="change-bg">
+            <li class="active" data-color="#eee"></li>
+            <li data-color="#333"></li>
+          </ul>
+          <!-- end multi bg -->
+        </div>
+      </div>
+    </div>
+    <!-- end header -->
+    <!-- start navigation of cash -->
+    <div class="navigation mb-10 mt-15">
+      <div class="container-c flex-between fs-14">
+        <div class="yazan d-flex">
+          <div
+            class="archive bg-blue tr-3 c-white mr-5 rad-10 p-10 cursor-pointer"
+            id="archiveOrderBtn"
+          >
+            <a class="c-white">
+              <i class="fa-solid fa-shop mr-5"></i>
+              <span>Archive</span>
+            </a>
+          </div>
+          <div id="holdOrderBtn" class="hold bg-white tr-3 rad-10 p-10 mr-5">
+            <a class="c-black cursor-pointer"
+              ><i class="fa-solid fa-boxes-packing mr-5"></i>
+              <span class="pop-holder-btn">Hold Orders</span>
+            </a>
+          </div>
+          <div
+            class="reset reset-button bg-whitered tr-3 c-white rad-10 p-10 mr-5 cursor-pointer"
+          >
+            <i class="fa-solid fa-xmark"></i>
+            <span>Reset</span>
+          </div>
+          <!-- start add new customer -->
+          <div class="mr-5">
+            <button
+              id="popupButtonCust"
+              class="popupButtonCust w-full h-full rad-10 p-10"
+            >
+              <i class="fa-solid fa-user-plus"></i
+              ><span class="d-inblock ml-5">Add a Customer</span>
+            </button>
+
+            <div id="popupCust" class="popupCust">
+              <div class="popup-content-customer p-relative">
+                <div class="tabCust">
+                  <span class="close" id="closeButton">&times;</span>
+
+                  <button class="tablinks" onclick="openTab(event, 'tab1')">
+                    New Customer
+                  </button>
+                  <button class="tablinks" onclick="openTab(event, 'tab2')">
+                    Customer Account
+                  </button>
+                </div>
+                <div id="tab1" class="tabcontentCust">
+                  <h3 class="mt-15 mb-10">Customer Information</h3>
+                  <form id="customerForm">
+                    <label for="customerName">Customer Name:</label>
+                    <div>
+                      <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Yazan Mohammad Ata"
+                        required
+                      />
+                    </div>
+                    <label for="phoneNumber"> Phone Number:</label>
+                    <div>
+                      <input
+                        type="tel"
+                        id="phoneNumber"
+                        placeholder="Start +962......"
+                        required
+                      />
+                    </div>
+                    <label for="addressCust">Address : </label>
+                    <div>
+                      <input
+                        type="text"
+                        id="addressCust"
+                        placeholder="Amman-Tabarbour-AL Hema Street"
+                        required
+                      />
+                    </div>
+                    <input type="submit" value="Add Customer" />
+                  </form>
+                </div>
+                <div id="tab2" class="tabcontentCust">
+                  <h3 class="mt-10 mb-10">Customer List</h3>
+                  <input type="search" />
+                  <table id="customerTable">
+                    <thead>
+                      <tr>
+                        <th>Customer Name</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="customerList"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end add new user -->
+        </div>
+        <div
+          class="search b-input rad-10 bg-white d-flex align-center p-relative flex-1"
+        >
+          <div class="glass-icon pr-10 pl-10">
+            <i class="fa-solid fa-magnifying-glass c-gray tr-3"></i>
+          </div>
+          <input class="b-none pl-10" type="search" placeholder="search" />
+        </div>
+        <div class="print-index ml-5 p-10 rad-10 bg-white tr-3">
+          <i class="fa-solid fa-print fa-lg"></i>
+        </div>
+      </div>
+    </div>
+    <!-- end navigation of cash -->
+    <!-- end items of table -->
+    <div class="table-cash-one">
+      <div class="table-emp mb-25">
+        <div class="container-c">
+          <table class="w-full bg-white">
+            <thead>
+              <tr>
+                <td>Number</td>
+                <td>Product Name</td>
+                <td>Quantity</td>
+                <td>Price Unit</td>
+                <td>Total Price</td>
+                <td>QR Code</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>4</td>
+                <td>Matrix-Cola 250 ML</td>
+                <td>4</td>
+                <td>0.3</td>
+                <td>1.2</td>
+                <td>6253500222008</td>
+                <td class="txt-center">
+                  <i class="fa-solid fa-trash lg c-gray flex-center"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>144</td>
+                <td>MR-Chips Cheese 100g</td>
+                <td>2</td>
+                <td>1.10</td>
+                <td>2.20</td>
+                <td>625354444400</td>
+                <td class="txt-center">
+                  <i class="fa-solid fa-trash lg c-gray"></i>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="pppp">
+                <td
+                  style="background-color: #0c2644; color: white; cursor: auto"
+                  colspan="3"
+                  class="total f-weight txt-center fs-20 bg-333 tr-3"
+                >
+                  Total
+                </td>
+                <td
+                  style="background-color: #0c2644; color: white; cursor: auto"
+                  colspan="4"
+                  class="price f-weight txt-center fs-20 bg-333 tr-3"
+                >
+                  3.40
+                </td>
+              </tr>
+              <tr>
+                <td
+                  id="completePaymentBtn"
+                  colspan="3"
+                  class="pay-table f-weight txt-center fs-20 bg-blue tr-3 c-white cursor-pointer"
+                >
+                  <a class="c-white d-block" href="#pop">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span>Pay</span>
+                  </a>
+                </td>
+                <td
+                  colspan="3"
+                  class="return-table f-weight txt-center fs-20 cursor-pointer"
+                >
+                  <a class="d-block" href="#return">
+                    <i class="fa-solid fa-right-left mr-5"></i>
+                    <span>Return</span>
+                  </a>
+                </td>
+                <td
+                  colspan="2"
+                  class="open-table f-weight txt-center fs-20 d-none"
+                >
+                  <i class="fa-solid fa-cash-register"></i>
+                  <span> Open Cash</span>
+                </td>
+                <td
+                  class="hold-table f-weight txt-center fs-20 bg-whitered tr-3 c-white"
+                >
+                  <i class="fa-regular fa-circle-pause"></i>
+                  <span>Hold</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- end items of table -->
+    <div id="popup-calaculaion" class="popup-calaculaion">
+      <div class="popup-content">
+        <h1>Payment Details</h1>
+        <div class="input-container">
+          <span>Total :</span>
+          <input id="totalInput" type="text" placeholder="3.40" readonly />
+        </div>
+        <div class="input-container">
+          <span>Paid :</span>
+          <input id="paidInput" type="text" placeholder="10" readonly />
+        </div>
+        <div class="input-container">
+          <span>Change :</span>
+          <input id="changeInput" type="text" placeholder="6.60" readonly />
+        </div>
+        <div id="calculation-section" class="calculation-section">
+          <div onclick="appendToPaid(1)">1</div>
+          <div onclick="appendToPaid(2)">2</div>
+          <div onclick="appendToPaid(3)">3</div>
+          <div onclick="appendToPaid(4)">4</div>
+          <div onclick="appendToPaid(5)">5</div>
+          <div onclick="appendToPaid(6)">6</div>
+          <div onclick="appendToPaid(7)">7</div>
+          <div onclick="appendToPaid(8)">8</div>
+          <div onclick="appendToPaid(9)">9</div>
+          <div onclick="clearLastCharacter()">
+            <i class="fa-solid fa-delete-left"></i>
+          </div>
+          <div onclick="appendToPaid(0)">0</div>
+          <div>
+            <i class="fa-solid fa-calculator"></i>
+          </div>
+        </div>
+        <div class="abcd">
+          <button class="red-button-ca" onclick="hidePopup()">Close</button>
+          <button class="blue-button-ca" onclick="hidePopup()">
+            Complete Payment
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- start calculation of table -->
+    <!-- <div id="pop" class="main-calc">
+      <div class="head-calc">
+        <div class="container-c">
+          <h1>calculations</h1>
+        </div>
+      </div>
+      <div class="calc mt-15">
+        <div class="container-c fs-20">
+          <div class="total flex-between p-relative w-full rad-6 bg-white">
+            <span class="fs-15">Total :</span>
+            <input type="text" placeholder="3.40 JD" readonly />
+          </div>
+          <div class="paid flex-between p-relative w-full rad-6 bg-white">
+            <span class="fs-15">Paid :</span>
+            <input type="text" placeholder="10 JD" readonly />
+          </div>
+          <div class="change flex-between p-relative w-full rad-6 bg-white">
+            <span class="fs-15">Change :</span>
+            <input type="text" placeholder="6.60 JD" readonly />
+          </div>
+        </div>
+      </div>
+      <div class="keyboard mt-15">
+        <div class="container-c d-flex">
+          <div class="key mr-10">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div><i class="fa-solid fa-delete-left"></i></div>
+            <div>0</div>
+            <div><i class="fa-solid fa-calculator"></i></div>
+          </div>
+          <div class="comp-payment flex-1 f-column gap-5 d-flex">
+            <a
+              class="butto-one flex-center bg-blue c-white fs-25 rad-6 h-half fs-20"
+              href="log.html"
+              >Payment</a
+            >
+            <a
+              class="butto-two flex-center bg-whitered c-white fs-25 rad-6 h-half fs-20"
+              href=""
+              >Reset</a
+            >
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- end calculation of table -->
+    <!-- start pop of hold order -->
+
+    <div id="main-pop" class="main-pop mt-25">
+      <div class="container-c">
+        <div id="popupHoldOrder" class="popupAarchiveOrder">
+          <button class="close-hold-pop" onclick="hidePopupHold()">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+
+          <div class="pop-hold p-15 bg-white rad-10">
+            <div
+              class="head p-relative flex-center gap-5 bg-whitered c-white rad-6"
+            >
+              <h1 class="mr-10">Hold Orders</h1>
+              <i class="fa-regular fa-circle-pause fa-lg"></i>
+            </div>
+            <div class="orders p-relative mt-25">
+              <input
+                class="search-hold-order"
+                type="search"
+                placeholder="Write QR Code... "
+              />
+
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-one</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Ahmad Al-Khateeb</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-two</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Ahmad Al-Khateeb</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-one</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Ahmad Al-Khateeb</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-one</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Ahmad Al-Khateeb</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-one</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Ahmad Al-Khateeb</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-one</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Ahmad Al-Khateeb</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popupAarchiveOrder" class="popupAarchiveOrder">
+          <button class="close-archive-pop" onclick="hidePopupArchive()">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+
+          <div class="pop-archive p-15 bg-white rad-10">
+            <div
+              class="head p-relative flex-center gap-5 bg-blue c-white rad-6"
+            >
+              <h1 class="mr-10">Archive Orders</h1>
+              <i class="fa-solid fa-shop fa-lg"></i>
+            </div>
+            <div class="orders mt-25">
+              <input
+                class="search-archive-order"
+                type="search"
+                placeholder="Write QR Code..."
+              />
+
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-one</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Yazan Mohammad</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-two</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Yazan Mohammad</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-three</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Yazan Mohammad</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-four</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Yazan Mohammad</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-five</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Yazan Mohammad</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="box p-relative mb-10 pb-20">
+                <h3 class="mt-10 mb-10">Order-six</h3>
+                <div class="content-order">
+                  <div class="name mb-5">Cashier : Yazan Mohammad</div>
+                  <div class="total mb-5">Total : 3.40</div>
+                  <div class="date">Date :08-DEC-2023:03h:30min</div>
+                </div>
+                <a href="">Open</a>
+              </div>
+              <div class="button-container-archive"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end pop of hold order -->
+
+    <!-- start Return item -->
+    <div id="return" class="table-cash-one vh-vh mt-25">
+      <div class="head-calc">
+        <div class="container-c">
+          <h1>Return Table</h1>
+        </div>
+      </div>
+      <div class="table-emp mb-25">
+        <div class="container-c">
+          <table class="w-full bg-white">
+            <thead>
+              <tr>
+                <td></td>
+                <td>Product Name</td>
+                <td>Quantity</td>
+                <td>Price Unit</td>
+                <td>Total Price</td>
+                <td>QR Code</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>15</td>
+                <td>Sinkrot-XL Eggs 30</td>
+                <td>1</td>
+                <td>2.98</td>
+                <td>2.98</td>
+                <td>6253500742008</td>
+                <td class="txt-center">
+                  <i class="fa-solid fa-trash lg c-gray flex-center"></i>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="pppp">
+                <td
+                  style="background-color: #0c2644; color: white; cursor: auto"
+                  colspan="3"
+                  class="total f-weight txt-center fs-20 bg-333 tr-3"
+                >
+                  Total
+                </td>
+                <td
+                  style="background-color: #0c2644; color: white; cursor: auto"
+                  colspan="4"
+                  class="price f-weight txt-center fs-20 bg-333 tr-3"
+                >
+                  2.98
+                </td>
+              </tr>
+              <tr>
+                <td
+                  id="completePaymentBtnRe"
+                  colspan="7"
+                  class="pay-table f-weight txt-center fs-20 bg-blue tr-3 c-white cursor-pointer"
+                >
+                  <a class="c-white d-block">
+                    <i class="fa-solid fa-right-left"></i>
+                    <span>Complete Return</span>
+                  </a>
+                </td>
+                <!-- <td colspan="4" class="open-table f-weight txt-center fs-20">
+                  <i class="fa-solid fa-cash-register"></i>
+                  <span> Open Cash</span>
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <a calss="move-revcive-page" href="/html/receiving.html"
+      >To recvivng page</a
+    >
+    <script src="html/JS/jsOne.js"></script>
+  </body>
+</html>
