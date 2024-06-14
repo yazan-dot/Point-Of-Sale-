@@ -1578,10 +1578,10 @@ ul li:hover {
 }
 
 .move-log-page {
-  position: sticky;
+  position: absolute;
   border-radius: 10px;
   padding: 10px;
-  left: 50%;
+  left: 45%;
   background-color: #0075ff;
   bottom: 10px;
   left: 50%;
