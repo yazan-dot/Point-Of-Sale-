@@ -1582,6 +1582,12 @@ ul li:hover {
   bottom: 10px;
   left: 50%;
 }
+.move-log-page {
+  position: sticky;
+  color: black;
+  bottom: 10px;
+  left: 50%;
+}
 /* end New Customer */
 
 /* start pop 
