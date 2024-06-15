@@ -464,7 +464,7 @@ ul {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 5px;
 }
-@media (max-wdith:768px){
+@media (max-width: 768px) {
   .calculation-section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
