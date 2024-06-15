@@ -243,6 +243,11 @@ ul {
   }
 }
 @media (max-width: 768px) {
+  .popupCust .close {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
   .navigation .container-c {
     display: flex;
     justify-content: flex-start;
