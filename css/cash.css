@@ -461,6 +461,12 @@ ul {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 5px;
 }
+@media (max-wdith:768px){
+  .calculation-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+}
 
 .calculation-section div {
   display: inline-block;
@@ -1592,6 +1598,7 @@ ul li:hover {
     top: 10px;
   }
 }
+
 /* end New Customer */
 
 /* start pop 
