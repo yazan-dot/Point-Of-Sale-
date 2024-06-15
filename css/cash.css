@@ -1425,7 +1425,9 @@ ul li:hover {
 
 @media (max-width: 768px) {
   .modal-content-Oos {
-    width: 60%;
+    width: 75%;
+    left: 60%;
+    top: 29%;
   }
 }
 
