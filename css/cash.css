@@ -277,6 +277,9 @@ ul {
   .navigation .glass-icon::before {
     left: 24%;
   }
+  .products-nav .container-c .monier .search-item .glass-icon::before {
+    left: 16%;
+  }
 }
 
 .navigation .container-c .search input,
