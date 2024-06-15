@@ -275,7 +275,7 @@ ul {
 }
 @media (max-width: 768px) {
   .navigation .glass-icon::before {
-    left: 17%;
+    left: 24%;
   }
 }
 
@@ -1172,7 +1172,38 @@ ul li:hover {
   border-radius: 10px;
   padding: 15px;
 }
+@media (max-width:768px){
+  .pop-hold {
+    width: 340px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  }
+  .close-hold-pop {
+    position: absolute;
+    right: 49%;
+    border-radius: 50%;
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+    top: 75px;
+  }
 
+.pop-archive {
+    width: 340px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+}
 .button-container-hold {
   text-align: center;
   margin-top: 20px;
