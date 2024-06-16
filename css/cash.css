@@ -1653,6 +1653,7 @@ ul li:hover {
     bottom: 0px;
     display: flex;
     justify-content: space-around;
+    padding-bottom: 22px;
   }
   .list-Ofemp .dataEmp .INFO .box .yazan {
     display: grid;
