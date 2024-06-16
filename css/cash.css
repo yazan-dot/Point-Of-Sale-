@@ -1659,6 +1659,11 @@ ul li:hover {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
+  .list-Ofemp .dataEmp .INFO .box .yazan span {
+    display: inline-block;
+    width: 180px;
+    
+  }
   .list-Ofemp .dataEmp .INFO .box {
     padding: 15px 0px 15px 15px;
   }
