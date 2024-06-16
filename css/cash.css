@@ -1646,7 +1646,25 @@ ul li:hover {
     height: fit-content;
   }
 }
-
+@media (max-width: 768px) {
+  .save-re-Log {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .list-Ofemp .dataEmp .INFO .box .yazan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .list-Ofemp .dataEmp .INFO .box {
+    padding: 15px 0px 15px 15px;
+  }
+  .dataEmp .image {
+    display: none;
+  }
+}
 /* end New Customer */
 
 /* start pop 
